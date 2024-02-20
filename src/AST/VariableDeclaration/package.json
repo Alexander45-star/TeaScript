@@ -1,0 +1,9 @@
+{
+  "name": "variabledeclaration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ParsingVariable.js",
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}

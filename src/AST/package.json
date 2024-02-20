@@ -1,0 +1,9 @@
+{
+  "name": "ast",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ast.js",
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}

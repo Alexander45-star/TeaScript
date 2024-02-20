@@ -1,0 +1,10 @@
+{
+  "name": "forstatement",
+  "version": "1.0.0",
+  "main": "ParsingFor.js",
+  "type": "module",
+  "private": true,
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

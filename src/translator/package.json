@@ -1,0 +1,9 @@
+{
+  "name": "translator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "translator.js",
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}

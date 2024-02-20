@@ -1,0 +1,8 @@
+{
+  "name": "namespacedeclaration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ParsingNamespace.js",
+  "author": "",
+  "license": "ISC"
+}

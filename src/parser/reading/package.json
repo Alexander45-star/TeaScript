@@ -1,0 +1,10 @@
+{
+  "name": "reading",
+  "version": "1.0.0",
+  "description": "",
+  "main": "read.js",
+  "type": "module",
+  "private": true,
+  "author": "",
+  "license": "ISC"
+}
