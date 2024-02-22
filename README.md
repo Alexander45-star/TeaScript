@@ -8,21 +8,21 @@
 
 Первый способ через **npm**:
 ```
-$npm install TeaScript
+$ npm install TeaScript
 ```
 Второй способ через **pnmp**:
 ```
-$pnmp install TeaScript
+$ pnmp install TeaScript
 ```
 Третий и последний способ через **yarn**:
 ```
-$yarn install TeaScript
+$ yarn install TeaScript
 ```
 
 #### Использование
 Для начала использования наберите в консоли команду
 ```
-$npm run program path
+$ npm run program path
 ```
 2. Path - путь где находиться скрипт
 
