@@ -1,0 +1,9 @@
+{
+  "name": "analysis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "analysis.js",
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}
