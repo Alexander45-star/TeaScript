@@ -1,0 +1,9 @@
+{
+  "name": "derectivestatement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ParsingDerective.js",
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}
