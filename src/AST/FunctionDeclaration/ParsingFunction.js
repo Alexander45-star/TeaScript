@@ -15,19 +15,20 @@ class ParsingFunction {
         program.body.FunctionDeclaration = {
             type: "FunctionDeclaration",
             start: position,
-            end: code_function.length
+            end: code_function.length + position
         }
         let name = "";
-        let i = position;
+        let i = 0;
         while(code_function[i] !== "(") {
             name += code_function[i];
             i++;
         }
+        let namefn = name.replace(/function /, "");
         program.body.FunctionDeclaration.Identifier = {
             type: "Identifier",
-            start: i - name.length,
-            end: name.length + (i - name.length),
-            name: name
+            start: this.find_index(namefn, namefn[0]) + 9 + position,
+            end: this.find_index(namefn, namefn[0]) + 9 + position + namefn.length - 1,
+            name: namefn
         }
         let params = "";
         while(code_function[i+1] !== ")") {
@@ -49,7 +50,7 @@ class ParsingFunction {
             start: position + this.find_index(body, "{") + name.length,
             end: replace_body.length + position + this.find_index(body, "{") + name.length
         }
-        console.log(JSON.stringify(program.body.FunctionDeclaration, null, 2));
+        //console.log(JSON.stringify(program.body.FunctionDeclaration, null, 2));
     }
 }
 

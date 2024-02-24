@@ -8,7 +8,6 @@ class ParsingDerective {
             end: code_derective.length,
             kind: code_derective.replace(/\@/, "")
         }
-        console.log(program)
     }
 }
 
