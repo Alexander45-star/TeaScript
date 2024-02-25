@@ -1,5 +1,6 @@
 import program from "../../AST/ast.js";
 
+
 class ParsingFunction {
     find_index(str, findElement) {
         let return_index;
@@ -12,7 +13,7 @@ class ParsingFunction {
         return return_index;
     }
     parse_function(code_function, position) {
-        program.body.FunctionDeclaration = {
+        const FunctionDeclaration = {
             type: "FunctionDeclaration",
             start: position,
             end: code_function.length + position
@@ -24,7 +25,7 @@ class ParsingFunction {
             i++;
         }
         let namefn = name.replace(/function /, "");
-        program.body.FunctionDeclaration.Identifier = {
+        FunctionDeclaration.Identifier = {
             type: "Identifier",
             start: this.find_index(namefn, namefn[0]) + 9 + position,
             end: this.find_index(namefn, namefn[0]) + 9 + position + namefn.length - 1,
@@ -38,18 +39,19 @@ class ParsingFunction {
         if(params !== "") {
             console.log("params!!");
         }
-        program.body.FunctionDeclaration.params = [];
+        FunctionDeclaration.params = [];
         let body = "";
         while(code_function[i] !== "}") {
             body += code_function[i];
             i++;
         }
         let replace_body = body.replace(/\(/, "").replace(/\)/, "");
-        program.body.FunctionDeclaration.BlockStatement = {
+        FunctionDeclaration.BlockStatement = {
             type: "BlockStatement",
             start: position + this.find_index(body, "{") + name.length - 1,
             end: replace_body.length + position + this.find_index(body, "{") + name.length - 1
         }
+        program.body.push(FunctionDeclaration);
         //console.log(JSON.stringify(program.body.FunctionDeclaration, null, 2));
     }
 }

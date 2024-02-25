@@ -32,7 +32,7 @@ class ForStatement {
         return return_index;
     }
     parse_for(code_for, position) {
-        program.body.ForStatement = {
+        const ForStatement = {
             type: "ForStatement",
             start: position,
             end: code_for.length
@@ -45,7 +45,7 @@ class ForStatement {
                     variableDeclaration += code_for[j1];
                     //!console.log(variableDeclaration);
                     const not_space = variableDeclaration.replace(/ /g, "");
-                    program.body.ForStatement.VariableDeclaration = {
+                    ForStatement.VariableDeclaration = {
                         type: "VariableDeclaration",
                         start: i+1,
                         end: variableDeclaration.length,
@@ -69,6 +69,7 @@ class ForStatement {
                 }
             }
         }
+        program.body.push(ForStatement);
         //console.log(JSON.stringify(program, null, 2));
     }
 }

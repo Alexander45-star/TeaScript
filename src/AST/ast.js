@@ -2,9 +2,8 @@ const program = {
     type: "program",
     start: 0,
     //end: code.length,
-    body: {
-
-    },
+    body: [],
+    comments: [],
     sourceType: "program"
 }
 

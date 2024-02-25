@@ -5,12 +5,12 @@ class ParsingComment {
 
     }
     parse_comment(code_comment, position, view) {
-        program.body.comments = {
+        program.comments.push({
             type: view,
             value: code_comment.replace(/\/\//, ""),
             start: position,
             end: position + code_comment.length - 1
-        }
+        })
     }
 }
 

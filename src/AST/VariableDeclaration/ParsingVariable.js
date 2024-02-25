@@ -20,7 +20,7 @@ class VariableDeclaration {
         console.log(arr);
     }
     parsing_variable(code_variable, position) {
-        program.body.VariableDeclaration = {
+        const VariableDeclaration = {
             type: "VariableDeclaration",
             start: position,
             end: code_variable.length
@@ -31,7 +31,7 @@ class VariableDeclaration {
             name += code_variable[i];
             i++;
         }
-        program.body.VariableDeclaration.Identifier = {
+        VariableDeclaration.Identifier = {
             type: "Identifier",
             start: position,
             end: name.length + position,
@@ -43,14 +43,14 @@ class VariableDeclaration {
             i++;
         }
         let view = kind.replace(/ /g, "");
-        program.body.VariableDeclaration.variableType = view;
+        VariableDeclaration.variableType = view;
         let literal = "";
         while(code_variable[i] !== ";") {
             literal += code_variable[i];
             i++;
         }
         let val = literal.replace(/ |=/g, "");
-        program.body.VariableDeclaration.Literal = {
+        VariableDeclaration.Literal = {
             type: "Literal",
             value: +val,
             raw: String(val),
@@ -59,18 +59,17 @@ class VariableDeclaration {
         }
         //console.log(program.body.VariableDeclaration.variableType.length);
 
-        let str = program.body.VariableDeclaration.variableType.split("::");
+        let str = VariableDeclaration.variableType.split("::");
         
         for(let j = 0; j < str.length; j++) {
             if(str[j] === "Array") {    
-                this.strArray(program.body.VariableDeclaration.Literal.raw);
+                this.strArray(VariableDeclaration.Literal.raw);
                 
             }
         }
         console.log(JSON.stringify(program, null, 2));
+        program.body.push(VariableDeclaration);
     }
-
-
 }
 
 export default VariableDeclaration;
