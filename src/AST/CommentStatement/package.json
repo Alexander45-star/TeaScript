@@ -1,0 +1,9 @@
+{
+  "name": "commentstatement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ParsingComment.js",
+  "type":"module",
+  "author": "",
+  "license": "ISC"
+}

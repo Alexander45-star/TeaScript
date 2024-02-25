@@ -31,6 +31,7 @@ class Parser {
                 new ParsingFunction().parse_function(substr2, (i+1) - substr2.length);
             }
         }
+        
         console.log(JSON.stringify(program, null, 2));
         //console.log(teaprogram[33]);
     }
