@@ -47,8 +47,8 @@ class ParsingFunction {
         let replace_body = body.replace(/\(/, "").replace(/\)/, "");
         program.body.FunctionDeclaration.BlockStatement = {
             type: "BlockStatement",
-            start: position + this.find_index(body, "{") + name.length,
-            end: replace_body.length + position + this.find_index(body, "{") + name.length
+            start: position + this.find_index(body, "{") + name.length - 1,
+            end: replace_body.length + position + this.find_index(body, "{") + name.length - 1
         }
         //console.log(JSON.stringify(program.body.FunctionDeclaration, null, 2));
     }
