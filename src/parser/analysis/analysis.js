@@ -1,6 +1,7 @@
 import program from "../../AST/ast.js";
 import ParsingDerective from "../../AST/DerectiveStatement/ParsingDerective.js";
 import ParsingFunction from "../../AST/FunctionDeclaration/ParsingFunction.js";
+import ParsingComment from "../../AST/CommentStatement/ParsingComment.js";
 
 class Parser {
     constructor() {
@@ -30,10 +31,18 @@ class Parser {
                 substr2 += teaprogram[i];
                 new ParsingFunction().parse_function(substr2, (i+1) - substr2.length);
             }
+            if(teaprogram[i] === "/" && teaprogram[i+1] === "/") {
+                let substr3 = "";
+                while(teaprogram[i] !== ";") {
+                    substr3 += teaprogram[i];
+                    i++;
+                }
+                new ParsingComment().parse_comment(substr3, i - substr3.length, "Line");
+            }
         }
-        
+
         console.log(JSON.stringify(program, null, 2));
-        //console.log(teaprogram[33]);
+        //console.log(teaprogram[29]);
     }
 }
 
